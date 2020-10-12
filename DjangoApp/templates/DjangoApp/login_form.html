@@ -1,0 +1,23 @@
+{% block content %}
+<!-- {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% else %} -->
+<div style="padding:100px">
+    <div style="margin-top:50px;margin-left:350px;padding:50px;max-width:200px;background-color: rgba(245, 249, 251, .7);box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);">
+        <h5>{{ error }}</h5>
+        <form method="POST" style="margin-top:20px;">
+            {% csrf_token %}
+            <label style="align-items:center;margin-left:60px">Login</label>
+            {{form.as_p}}
+            <br>
+            <button type="submit"><a href="{% url 'signupuser' %}">SignUp</a></button>
+            <button type="submit" style="float:right" onclick="login()">Login</button>
+        </form>
+    </div>
+</div>
+<!-- {% endif %} -->
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "sidenav.html" %}
+{% load render_table from django_tables2 %}
+{% block content %}
+<!-- <h3 style ="margin-top:20px;">List View</h3> -->
+<!-- <ul>
+    <li style="margin-top:20px;"> Install package to render table : pip install django_tables2</li>
+    <li>After that add django_tables2 in INSTALLED_APPS of settings.py file</li>
+</ul> -->
+{% if my_list %}
+<div class= "container">
+    <p>{% render_table my_list %}</p>
+</div>
+{% else %}
+    <p>No Data.</p>
+{% endif %}
+{% endblock %}

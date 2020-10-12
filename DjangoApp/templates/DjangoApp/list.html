@@ -1,0 +1,19 @@
+{% extends "sidenav.html" %}
+{% block content %}
+<div class= "container">
+    <p>List Count: {{ num_list }}</p>
+    <ul>
+        {% if latest_list %}
+            <ul style="float:left">
+            {% for table1 in latest_list %}
+                <li><a href="/DjangoApp/{{ table1.field1 }}/">{{ table1.field1 }}</a></li>
+            {% endfor %}
+            </ul>
+            {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
+    </ul>
+    <br><br>
+</div>
+{% endblock %}
+ 

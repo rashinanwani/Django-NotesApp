@@ -1,0 +1,21 @@
+{% extends "sidenav.html" %}
+{% block content %}
+<div class="container">
+  <h4 style="margin-top: 20px;margin-left: 20px;">Commands for Beginners:</h4><br><br>
+  <ul>
+    <li>Command to check whether python is installed or not: <b>python --version</b></li>
+    <li>Command to check whether pip is installed or not: <b>pip --version</b></li>
+    <li>Command to install django: <b>pip install django</b></li>
+    <li>Command to check whether django is installed or not: <b>import django print(django.get_version())</b></li>
+    <li>Command to start the new project: <b>django-admin startproject app</b></li>
+    <li>Command to run the project: <b>python manage.py runserver</b></li>
+    <!-- (manage.py: script used to create applications, work with databases, and start the development web server)  -->
+    <li>Command to change the port no: <b>python manage.py runserver 8080</b>(by default it is 8000)</li>
+    <li>Command to create your app: <b>python manage.py startapp app_name</b></li>
+    <li>Command to create migrations for those changes: <b>python manage.py makemigrations app_name</b></li>
+    <li>Command to run the migrations and manage your database schema automatically: <b>python manage.py migrate</b></li>
+    <li>Command to takes migration names and returns their SQL: <b>python manage.py sqlmigrate app_name 0001</b></li>
+    <li>Command to create an admin user: <b>python manage.py createsuperuser</b></li>
+</ul>
+</div>
+{% endblock %}

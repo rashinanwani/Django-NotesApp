@@ -1,0 +1,16 @@
+{% extends "sidenav.html" %}
+{% block content %}
+
+<!-- {% load icons %}
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script> -->
+
+<div class= "container">
+    <form method = "GET"> 
+        {{ form }}<br><br>
+        <input type = "submit" value = "Submit" >
+    </form> 
+</div>
+{% if add %}
+<p style ="margin-left:50px;">Note added</p>
+{% endif %}
+{% endblock %}

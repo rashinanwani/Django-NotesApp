@@ -1,0 +1,14 @@
+{% extends "sidenav.html" %}
+{% block content %}
+
+<!-- {% load icons %}
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script> -->
+
+<div class= "container">
+    <form method = "POST">
+        {% csrf_token %} 
+        {{ form }}<br><br>
+        <input type = "submit" value = "Update">
+    </form> 
+</div>
+{% endblock %}

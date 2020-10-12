@@ -1,0 +1,30 @@
+{% extends "sidenav.html" %}
+{% block content %}
+{% load icons %}
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+<div class ="container">
+    <p>Notes Count: {{ num_list }}</p>
+    <!-- <p>{{latest_list}}</p> -->
+    {% if latest_list %}
+    <div style="display:flex;flex-direction:row;flex-wrap:wrap;">
+        {% for viewnotes in latest_list %}
+        <div style="width:40%;padding:30px">
+                <!-- <p>Note {{ viewnotes.id }}</p> -->
+                Note Id: {{ viewnotes.noteid }} <br>
+            <a href="/DjangoApp/viewnotes/delete/{{viewnotes.noteid}}/"style="color:black;float:right;border:none;background-color:white;">
+                <span class="iconify"style="float:right;cursor:pointer;width:20px" data-icon="ic:baseline-delete"data-inline="false"></span></a>
+            <a href="/DjangoApp/viewnotes/edit/{{viewnotes.noteid}}/"style="color:black;float:right;border:none;background-color:white;">
+                <span class="iconify"style="float:right;cursor:pointer;width:20px" data-icon="eva:edit-fill"data-inline="false"></span></a>
+               
+            <ul style="background-color:lightpink">
+                <li>{{ viewnotes.notes }}</li>
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p style="margin-left:50px">No Notes are available.</p>
+    {% endif %}
+</div>
+{% endblock %}

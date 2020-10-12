@@ -1,0 +1,6 @@
+
+<form method="POST" action = "{% url 'logoutuser' %}">
+<!-- as_p is used to render Django Forms as paragraph -->
+{% csrf_token %}
+<button type="submit">Logout</button>
+</form>

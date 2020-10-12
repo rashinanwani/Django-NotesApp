@@ -1,0 +1,14 @@
+{% block content %}
+<!-- <div style="padding:100px"> -->
+<div style="margin-top:150px;position:fixed;margin-left:450px;padding:40px;max-width:200px;background-color: rgba(245, 249, 251, .7);box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);">
+    <h5>{{ error }}</h5>
+    <form method="POST" style="margin-top:20px;">
+    <!-- as_p is used to render Django Forms as paragraph -->
+    {% csrf_token %}
+    <label style="align-items:center;margin-left:60px">SignUp</label>
+    {{ form.as_p }}<br>
+    <button type="submit">SignUp</button>
+    <button type="submit" style="float:right"><a href="{% url 'loginuser' %}">LogIn</a></button>
+    </form>
+</div>
+{% endblock %}

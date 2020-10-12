@@ -1,0 +1,38 @@
+.page-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%
+}
+
+.sidenav-container{
+    padding:10px 10px 400px 10px;
+    width: 15%;
+    height:100%;
+    overflow:hidden;
+    background-color: rgba(245, 249, 251, .7);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    /* position:fixed */
+}
+
+.list{
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.list-items{
+    /* border-block-end: 1px solid gray; */
+    border-block-end: 1px solid #ccc;
+    margin-top:20px;
+    height:40px;
+    width:100%;
+}
+
+.container{
+    /* margin-top:50px; */
+    /* margin-left:50px; */
+    padding:50px 0px 0px 50px;
+    /* width:100%; */
+    /* background-color: rgba(245, 249, 251, .7); */
+    /* position:fixed */
+}
