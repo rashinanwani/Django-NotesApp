@@ -25,7 +25,7 @@ def signupuser(request):
         #Create a new user
         if request.POST['password1'] == request.POST['password2']:
             try:
-                user = User.objects.create_user(request.POST['username'],password=request.POST['password1'])
+                user = User.objects.create_user(username=request.POST['username'],password=request.POST['password1'])
                 user.save()
                 login(request,user)
                 return render(request,'DjangoApp/signupuser.html',{'form':SignUpForm(), 'error':'Registered Successfully'})
@@ -48,10 +48,10 @@ def loginuser(request):
             return redirect('index')
 
 def logoutuser(request):
-    if request.method == 'POST':
+    if request.method == 'GET':
         logout(request)
-        return HttpResponse("You're logged out.")
-    return render(request,'DjangoApp/login_form.html',{'form':AuthenticationForm()})
+        # return HttpResponse("You're logged out.")
+        return redirect('loginuser')
 
 def detail(request, field1):
     return HttpResponse("User Id: %s." % field1)
@@ -98,8 +98,8 @@ class FormView(generic.FormView):
         context['add'] = 1
         if request.GET:
             notevalue = request.GET['notes']
-            n1 = viewnotes.objects.create(notes=notevalue)
-            context['add'] = 1  
+            n1 = viewnotes.objects.create(user = request.user, notes=notevalue)
+            context['add'] = 1 
             return render (request, 'DjangoApp/addnotes.html',context)
         else:
             context['add'] = 0
@@ -118,8 +118,8 @@ class FormView(generic.FormView):
 #     return render (request, 'DjangoApp/login_form.html',context)
 
 def view_notes(request):
-    latest_list = viewnotes.objects.all()
-    num_list = viewnotes.objects.all().count()
+    latest_list = viewnotes.objects.filter(user=request.user)
+    num_list = viewnotes.objects.filter(user=request.user).count()
     context = {
         'num_list': num_list,
         'latest_list': latest_list

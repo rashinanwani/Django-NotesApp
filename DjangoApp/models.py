@@ -43,6 +43,7 @@ class table1(models.Model):
 
 class viewnotes(models.Model):
     noteid = models.AutoField(primary_key=True)
+    user = models.CharField('user', max_length = 30)
     notes = models.CharField('notes', max_length = 200)
     def __str__(self):
         return self.notes
