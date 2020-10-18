@@ -14,8 +14,9 @@
             <label style="align-items:center;margin-left:60px">Login</label>
             {{form.as_p}}
             <br>
-            <button type="submit"><a href="{% url 'signupuser' %}">SignUp</a></button>
-            <button type="submit" style="float:right" onclick="loginuser()">Login</button>
+            <a href="{% url 'signupuser' %}">SignUp</a>
+            <!-- <button type="submit" style="float:right" onclick="loginuser()">Login</button> -->
+            <input type="submit" style="float:right" value="Login" class="btn-submit" /><br>
         </form>
     </div>
 </div>

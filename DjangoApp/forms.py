@@ -14,19 +14,26 @@ class NotesForm(forms.ModelForm):
 
 class SignUpForm(UserCreationForm):
     username = forms.CharField(
-        label="Username",
+        label='',
+        widget=forms.TextInput(attrs={'placeholder': 'Enter UserName'}),
         strip=False
     )
 
     password1 = forms.CharField(
-        label="Password",
+        label='',
         strip=False,
-        widget=forms.PasswordInput,
+        widget=forms.PasswordInput(attrs={'placeholder': 'Enter Password'}),
     )
     password2 = forms.CharField(
-        label="Confirm Password",
-        widget=forms.PasswordInput,
+        label='',
+        widget=forms.PasswordInput(attrs={'placeholder': 'Enter Confirm Password'}),
         strip=False,
     )
+
+    # email = forms.CharField(
+    #     label='',
+    #     widget=forms.TextInput(attrs={'placeholder': 'Enter Email'}),
+    #     strip=False,
+    # )
     # class Meta(UserCreationForm.Meta):
     #     fields = ("username", "email")
